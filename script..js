@@ -16,6 +16,23 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
-addBookToLibrary("Harry Potter and the Sorcerer's Stone", "J.K Rowling", 320, true)
+// Display Book 
+function displayBooks() {
+    const libraryContainer = document.querySelector(".library");
+    libraryContainer.replaceChildren();
 
-console.log(myLibrary);
+    for (let i = 0; i < myLibrary.length; i++) {
+         const bookCard = document.createElement("div");
+         const book = myLibrary[i];
+
+         bookCard.textContent = ` ${book.title} by ${book.author} with ${book.pages} pages. ${book.read}`
+
+         libraryContainer.appendChild(bookCard);
+    }
+}
+
+addBookToLibrary("Harry Potter and the Sorcerer's Stone", "J.K Rowling", 320, true)
+addBookToLibrary("Harry Potter and the Chamber of Secrets", "J.K Rowling", 321, false)
+addBookToLibrary("Harry Potter and the Prisoner of Azkaban", "J.K Rowling", 322, true)
+
+displayBooks();
