@@ -9,6 +9,33 @@
 </head>
 <body>
     <h1>My Library</h1>
-    <!-- TODO: add library container, New Book button, and form/dialog here -->
+    <button class="add-book">Add New Book</button>
+    <div class="library-container"></div>
+
+    <dialog id="add-book-dialog">
+        <form id="add-book-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="page-count">Pages:</label>
+            <input type="number" id="page-count" name="page-count" min="1" required>
+
+            <fieldset>
+                <legend>Done reading?</legend>
+                <label for="read-yes">Yes</label>
+                <input type="radio" id="read-yes" name="isRead" value="yes">
+                <label for="read-no">No</label>
+                <input type="radio" id="read-no" name="isRead" value="no" checked>
+            </fieldset>
+
+            <menu>
+                <button type="submit" id="confirm">Add Book</button>
+                <button type="button" id="cancel-button">Cancel</button>
+            </menu>
+        </form>
+    </dialog>
 </body>
 </html>
